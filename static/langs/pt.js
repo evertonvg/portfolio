@@ -8,7 +8,7 @@ export default async (context, locale) => {
             {
                 id:1,
                 title:'Home',
-                idSection:'#home'
+                idSection:'#home',
             },
             {
                 id:2,
@@ -30,7 +30,13 @@ export default async (context, locale) => {
                 title:'Habilidades',
                 idSection:'#skills'
             }
-        ] 
+        ],
+        content:{
+            name: 'Everton Vargas Guetierres',
+            title: 'Sou desenvolvedor front-end e construo telas de sites para desktop e mobile',
+            althcj: 'imagem de html css e javascript',
+            more:'Saiba mais'
+        }
     })
 }
   

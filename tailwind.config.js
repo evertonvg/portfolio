@@ -4,7 +4,9 @@ module.exports = {
 	mode:'jit',
 	theme: {
 		extend: {
-			
+			fontFamily: {
+				'lato': ['Lato', 'sans-serif']
+			}
 		},
 		colors:{
 			black:'#000000',

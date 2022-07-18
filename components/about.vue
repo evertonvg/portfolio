@@ -1,5 +1,5 @@
 <template>
-    <section id="about" class="p-96">
+    <section id="about" class="p-96 bg-white relative z-20 dark:bg-grayBody">
         
     </section>
 </template>

@@ -1,10 +1,10 @@
 <template>
   <div class=" dark:bg-grayBody">
     <home/>
-    <about/>
+    <!-- <about/>
     <experience/>
     <jobs/>
-    <skills/>
+    <skills/> -->
     <Loading>
       carregando...
     </Loading>
@@ -12,22 +12,32 @@
 </template>
 
 <script lang="ts">
+
 import Vue from 'vue';
 import About from '~/components/about.vue';
 import Experience from '~/components/experience.vue';
 import Home from '~/components/home.vue';
 import Jobs from '~/components/jobs.vue';
-
 import Loading from '~/components/loading.vue';
 import Skills from '~/components/skills.vue';
 
 
-export default Vue.extend({
-    name: "IndexPage",
-    components: { Loading, Home, Experience, Jobs, About, Skills },
 
+export default Vue.extend({
+	name: "IndexPage",
+	components: { Loading, Home, Experience, Jobs, About, Skills },
+	
+	data() {
+		return {
+		}
+	},
+	computed:{
+		isDark():boolean{
+			return (this.$store.state.dark).dark as boolean
+		}
+	},
     mounted():void{
-      
+  
     }
 });
 </script>

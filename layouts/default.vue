@@ -7,6 +7,16 @@
 			</transition>
 		</main>
 		<Footer/>
+		<client-only>
+			<vue-particles 
+				class="h-screen w-screen z-10 fixed top-0 left-0" 
+				:color="'#000'"
+				:particleOpacity="1"
+				:linesColor="'#000'"
+				:hoverEffect="false"
+				:clickEffect="false"
+			/>
+    	</client-only>
 	</div>
 </template>
 <script lang="ts">
@@ -14,6 +24,7 @@ import { create } from 'domain';
 import Vue from 'vue';
 import Footer from '~/components/footer.vue';
 import Menu from '~/components/menu.vue';
+import { MutationTypes } from '@/store/dark/types/mutation-types'
 export default Vue.extend({
     name: "main-page",
     data() {
@@ -25,12 +36,25 @@ export default Vue.extend({
 	created():void{
 		
 	},
+	computed:{
+		dark: {
+			get() {
+				return this.$store.state.dark
+			},
+			set(value: boolean) {
+				this.$store.commit(MutationTypes.SET_DARK, value)
+			},
+		},
+	},
 	mounted():void{
 		if(localStorage.darkMode=='true'){
 			this.isDarkMode = true
+			this.$store.commit(MutationTypes.SET_DARK, true);
 		}else{
 			this.isDarkMode = false
+			this.$store.commit(MutationTypes.SET_DARK, false);
 		}
+		console.log(this.$store.commit)
 	}
 });
 </script>

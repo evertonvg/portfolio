@@ -1,5 +1,5 @@
 <template>
-    <div :class="['dark:bg-grayHead shadow-lg fixed top-0 left-0 w-full transition-all',!showMenu ? '-translate-y-16' : '']">
+    <div :class="['dark:bg-grayHead bg-white z-40 shadow-lg fixed top-0 left-0 w-full transition-all',!showMenu ? '-translate-y-16' : '']">
         <div class="container">
             <nav class="flex py-3">
 
@@ -32,8 +32,8 @@
 
                 <div class="flex-1 flex items-center justify-end">
                     <nav>
-                        <menu-icon size=40 class="cursor-pointer lg:hidden" v-show="!showMenuAnchor" @click="openMenuAnchor"/>
-                        <window-close size=40 class="cursor-pointer lg:hidden" v-show="showMenuAnchor" @click="closeMenuAnchor" />
+                        <menu-icon :size=40 class="cursor-pointer lg:hidden" v-show="!showMenuAnchor" @click="openMenuAnchor"/>
+                        <window-close :size=40 class="cursor-pointer lg:hidden" v-show="showMenuAnchor" @click="closeMenuAnchor" />
                         <transition name="fade">
                             <ul v-show="showMenuAnchor"
                              class="flex items-center justify-center fixed lg:static lg:flex-row 
